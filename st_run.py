@@ -59,7 +59,7 @@ def print_relevant_images(inputText):
             st.image(image_representation)
 
 with st.form('my_form'):
-    inputText = st.text_area('Enter text:', 'What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?')
+    inputText = st.text_area('Enter text:', 'What should I do if I feel stuck?')
     submitted = st.form_submit_button('Submit')
     if not OPENAI_API_KEY.startswith('sk-'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')

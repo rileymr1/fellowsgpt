@@ -7,8 +7,10 @@ import certifi
 from get_external_ip import get_external_ip
 
 st.title('🏥 FellowsGPT')
-external_ip = get_external_ip()
-st.write("External IP: ", external_ip)
+
+## For use if need to whitelist certain IP addresses
+# external_ip = get_external_ip()
+# st.write("External IP: ", external_ip)
 
 # from IPython.display import HTML, display
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
