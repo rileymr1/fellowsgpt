@@ -190,5 +190,3 @@ retriever = MultiVectorRetriever(
 
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
-
-print(chain_multimodal_rag.invoke("What should I do if an unexpected error comes up?"))
