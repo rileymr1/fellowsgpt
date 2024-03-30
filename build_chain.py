@@ -120,7 +120,7 @@ def split_image_text_types(docs):
         if isinstance(doc, Document):
             doc = doc.page_content
         if looks_like_base64(doc) and is_image_data(doc):
-            doc = resize_base64_image(doc, size=(1300, 600))
+            doc = resize_base64_image(doc, size=(1920, 1080))
             b64_images.append(doc)
         else:
             texts.append(doc)
@@ -139,7 +139,7 @@ def multi_modal_rag_chain(retriever):
         {
             "context": retriever | RunnableLambda(split_image_text_types),
             "question": RunnablePassthrough(),
-        }
+        }   
         | RunnableLambda(img_prompt_func)
         | model
         | StrOutputParser()
