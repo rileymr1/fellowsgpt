@@ -170,7 +170,7 @@ vectorstore = MongoDBAtlasVectorSearch.from_connection_string(
 # kv_collection.find_one()
 mongoDict = {}
 for docObject in kv_collection.find():
-    mongoDict.update(docObject)
+    mongoDict.update(docObject) # TODO: this might be wrong because accidentally override mongoDict with whatever is the latest object, instead of appending
 
 mongoObjArr = []
 # Flag to skip the first entry
