@@ -158,6 +158,8 @@ mongoDB = client[DB_NAME]
 vector_collection = client[DB_NAME][VECTOR_COLLECTION_NAME]
 kv_collection = client[DB_NAME][KEYVALUE_COLLECTION_NAME]
 
+print ("MongoDB connected: ", mongoDB)
+
 vectorstore = MongoDBAtlasVectorSearch.from_connection_string(
     MONGODB_CONN_STRING,
     DB_NAME + "." + VECTOR_COLLECTION_NAME,
@@ -190,3 +192,5 @@ retriever = MultiVectorRetriever(
 
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
+
+print(chain_multimodal_rag.invoke("How can I convince an IT stakeholder to invest resources into my initiative to build regimen margin projections into Allscripts?"))

@@ -10,6 +10,7 @@ from PIL import Image
 import numpy as np
 
 from dotenv import load_dotenv
+os.environ.clear()
 load_dotenv()
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
